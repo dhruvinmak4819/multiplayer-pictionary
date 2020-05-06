@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pictionary</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+<body>
+  <form action="" id="usernameform" method="POST" style="display: block">
+    <div class="row">
+      <div class="col s12">
+        Enter your:
+        <div class="input-field inline">
+          <input id="name" type="text" name="name" class="validate">
+          <label for="name">name</label>
+
+        </div>
+      </div>
+      Select team
+      <p>
+        <label>
+          <input class="with-gap" name="team" type="radio" value="A" checked />
+          <span>A</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input class="with-gap" name="team" type="radio" value="B" />
+          <span>B</span>
+        </label>
+      </p>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    </button>
+  </form>
+<!-- 
+  <canvas class="whiteboard" ></canvas>
+
+  <div class="colors">
+    <div class="color black"></div>
+    <div class="color red"></div>
+    <div class="color green"></div>
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+  </div> -->
+<div id="playroom" style="display: none">
+  <div class="row">
+    <div class="col s6" style="margin: 0;
+    padding: 0;">
+      <canvas class="whiteboard_team_a" style="outline: black 3px solid;"></canvas>
+
+      <div class="colors">
+        <div class="color black"></div>
+        <div class="color red"></div>
+        <div class="color green"></div>
+        <div class="color blue"></div>
+        <div class="color yellow"></div>
+      </div>
+    </div>
+    <div class="col s6" >
+      <canvas class="whiteboard_team_b"  style="outline: black 3px solid;"></canvas>
+
+      <div class="colors">
+        <div class="color black"></div>
+        <div class="color red"></div>
+        <div class="color green"></div>
+        <div class="color blue"></div>
+        <div class="color yellow"></div>
+      </div>
+    </div>
+  </div>
+  game state
+  <div class="row">
+    <div class="col s6" id="team_a">
+
+    </div>
+    <div class="col s6" id="team_b">
+    </div>
+  </div>
+  <button class="btn waves-effect waves-light" type="button" id="clear" name="action" style="position: fixed;
+    left: 30%;font-size: 30px;top:3%">clear
+  </button>
+  <button class="btn waves-effect waves-light" type="button" id="get_word" name="action" style="position: fixed;
+    left: 20%;font-size: 30px;top:3%"> next
+  </button>
+</div>
+
+<!--<button id='join_game'>Join Game</button>-->
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+</body> 
+</html>
